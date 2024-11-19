@@ -311,7 +311,19 @@ function updateGameArea() {
     50
   );
 
-  if (!myGameArea.gameplay || myBall.breakcount == rows * columns) {
+  if (myBall.breakcount == rows * columns) {
+    myGameArea.clear();
+    gameText(
+      "80px Arial",
+      "center",
+      "middle",
+      "YOU WON!!",
+      myGameArea.canvas.width / 2,
+      myGameArea.canvas.height / 2
+    );
+  }
+
+  if (!myGameArea.gameplay) {
     myGameArea.clear();
     gameText(
       "80px Arial",
